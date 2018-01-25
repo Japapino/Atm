@@ -44,8 +44,15 @@ public class AtmTest {
 
 		Atm underTest = new Atm();
 		boolean check = underTest.allowAccess("1225");
-		//Assert.assertEquals(false, check);
+		// Assert.assertEquals(false, check);
 		Assert.assertFalse(check);
+	}
 
+	@Test
+	public void shouldDeposit50() {
+		Atm underTest = new Atm();
+		underTest.deposit(50);
+		double balance = underTest.getBalance();
+		Assert.assertEquals(550, balance, 0.001);
 	}
 }
